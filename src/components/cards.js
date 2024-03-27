@@ -2,7 +2,7 @@ import { useDispatch } from "react-redux";
 import {
   removeExercise,
   removeFoodItems,
-  removeGoals
+  removeGoals,
 } from "../actions/actions";
 
 export const ExerciseCard = ({ exerciseDetails }) => {
@@ -12,7 +12,7 @@ export const ExerciseCard = ({ exerciseDetails }) => {
 
   return (
     <div className="card-outline">
-      <h3>Exercise name : {exerciseName}</h3>
+      <h3>Name: {exerciseName}</h3>
       <p>Duration: {duration} seconds</p>
       <p>Calories burned: {caloriesBurned} kcal</p>
       <button
@@ -32,7 +32,7 @@ export const FoodCard = ({ foodDetails }) => {
 
   return (
     <div className="card-outline">
-      <h3>Food name : {foodName}</h3>
+      <h3>Item: {foodName}</h3>
       <p>Calories: {calories} kcal</p>
       <p>Protein: {protein} gm</p>
       <p>Fat: {protein} gm</p>
@@ -48,20 +48,14 @@ export const FoodCard = ({ foodDetails }) => {
 };
 
 export const GoalCard = ({ goalDetails }) => {
-  const {
-    _id,
-    goalName,
-    description,
-    targetDate,
-    targetCalories,
-    status
-  } = goalDetails;
+  const { _id, goalName, description, targetDate, targetCalories, status } =
+    goalDetails;
 
   const dispatch = useDispatch();
 
   return (
     <div className="card-outline">
-      <h3>Goal name : {goalName}</h3>
+      <h3>Goal: {goalName}</h3>
       <p>Description: {description}</p>
       <p>Target date: {targetDate}</p>
       <p>Target calories: {targetCalories} kcal</p>
